@@ -40,3 +40,37 @@ interface Obj {
   name: string;
   age: number;
 }
+
+// union types :
+// vars
+var val: string | Number;
+val = "john";
+val = 2;
+
+// arrays
+var arr: (string | number)[] = [];
+
+arr.push("john");
+arr.push(2);
+
+// functions in typescript
+let funk: Function = () => {
+  console.log("function");
+};
+let func: Function;
+func = (...args: string[]) => {
+  console.log("function");
+};
+
+// optional params: ?
+var doSom: Function = (a: number, b: number, c?: number) => {};
+
+// functions: explicit types to return
+var exp: Function = (a: number): number => {
+  return a;
+};
+
+// return nothing. void of any value.
+var exp: Function = (a: number): void => {};
+
+// type aliases lect 9

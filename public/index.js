@@ -1,3 +1,4 @@
+"use strict";
 // types: number, string, boolean, symbol, null, any, undefined
 var user = "schoolboy";
 var und = null;
@@ -20,7 +21,16 @@ str.push(true);
 // the object fields can only accept specified type
 var obj = {
     name: "",
-    age: 0
+    age: 0,
 };
 obj.name = "benson";
 obj.age = 10;
+// union types :
+// vars
+var val;
+val = "john";
+val = 2;
+// arrays
+var arr = [];
+arr.push("john");
+arr.push(2);
