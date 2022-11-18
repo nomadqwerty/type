@@ -41,7 +41,7 @@ interface Obj {
   age: number;
 }
 
-// union types :
+// union types : mix diff data types
 // vars
 var val: string | Number;
 val = "john";
@@ -74,3 +74,54 @@ var exp: Function = (a: number): number => {
 var exp: Function = (a: number): void => {};
 
 // type aliases lect 9
+// when using unions code can get repeated, so there is an option to use aliase types
+// its like storing a union type pair in a variable
+
+type str_num = string | number;
+
+type obj_arr = { list: str_num[] };
+
+const addtoList = (storage: obj_arr, val: str_num) => {
+  storage.list.push(val);
+};
+
+let myStore = { list: [] };
+
+addtoList(myStore, "item1");
+
+console.log(myStore);
+
+// function signatures:
+// these are blueprints for a function to follow
+// specify the params and the types and the type to return.
+let sig: (param1: number, param2: number) => number;
+
+sig = function (param1: number, param2: number) {
+  return param1 + param2;
+};
+
+//
+// dom:
+const div = document.querySelector("div") as HTMLDivElement;
+
+console.log(div?.classList);
+
+// addlistener
+div.addEventListener("click", (e: Event) => {
+  console.log(e);
+});
+
+// classes type script.
+
+class Oop {
+  // priveate and readonly fields
+  private hide;
+  readonly detail;
+
+  constructor(hide: string, detail: string) {
+    this.hide = hide;
+    this.detail = detail;
+  }
+}
+
+const opp = new Oop("name", "skooty");

@@ -9,7 +9,7 @@ var sym = Symbol();
 var bool = true;
 // specify type for function params
 var circ = function (diameter) {
-    return diameter * Math.PI;
+  return diameter * Math.PI;
 };
 // function can only be calle with param of specified type
 circ(Number("50"));
@@ -20,8 +20,8 @@ var str = ["any", "1", 1, {}];
 str.push(true);
 // the object fields can only accept specified type
 var obj = {
-    name: "",
-    age: 0,
+  name: "",
+  age: 0,
 };
 obj.name = "benson";
 obj.age = 10;
